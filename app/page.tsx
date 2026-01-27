@@ -71,7 +71,20 @@ export default function Home() {
             >
               {/* Greeting */}
               <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-3 md:mb-4">
-                <span className="text-4xl sm:text-5xl md:text-6xl">👋</span>
+                <motion.span 
+                  className="text-4xl sm:text-5xl md:text-6xl"
+                  animate={{
+                    rotate: [0, 14, -8, 14, -8, 0],
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    repeatDelay: 2,
+                    ease: "easeInOut"
+                  }}
+                >
+                  👋
+                </motion.span>
                 <span className="text-blue-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-blue-50 px-4 md:px-6 py-2 md:py-3 rounded-full" style={{ fontFamily: 'var(--font-fredoka), sans-serif' }}>Hello, I&apos;m</span>
               </div>
 
@@ -351,6 +364,11 @@ export default function Home() {
                 title: 'Lixil Tomcat – Health Tracking',
                 tech: 'Flutter',
                 description: 'Implemented Bluetooth device communication and real-time health data visualization for health tracking applications.',
+              },
+              {
+                title: 'Flaira - AI Content Management Platform',
+                tech: 'AI/RAG',
+                description: 'AI Content Management Platform using RAG-based learning to generate authentic, voice-consistent posts, preserves a user\'s personal or brand voice.',
               }
             ].map((project, idx) => (
               <motion.div
@@ -510,7 +528,7 @@ export default function Home() {
                 <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-blue-600 text-center sm:text-left">Connect With Me</h4>
                 <div className="flex space-x-4 justify-center sm:justify-start">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/vishwanath-m-hegde/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white border border-blue-200 flex items-center justify-center hover:bg-white hover:border-blue-400 hover:scale-110 hover:shadow-lg transition-all"
@@ -518,7 +536,7 @@ export default function Home() {
                     <Linkedin className="text-blue-600" size={20} />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/vishwanathhegde"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white border border-blue-200 flex items-center justify-center hover:bg-white hover:border-blue-400 hover:scale-110 hover:shadow-lg transition-all"

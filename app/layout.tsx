@@ -11,6 +11,9 @@ const fredoka = Fredoka({
 export const metadata: Metadata = {
   title: "Vishwanath Hegde - Portfolio",
   description: "Software Engineer & Master's Student in Applied Computer Science",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
