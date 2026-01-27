@@ -62,10 +62,10 @@ export default function Navigation() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={`text-sm font-medium transition-all duration-200 relative group px-2 py-1 rounded-md hover:scale-110 hover:shadow-md ${
+                    className={`text-sm font-medium transition-all duration-200 relative group px-2 py-1 rounded-md hover:scale-110 ${
                       isActive 
-                        ? 'text-blue-600 font-bold bg-white/80 shadow-md' 
-                        : 'text-black hover:font-bold hover:bg-white/60'
+                        ? 'text-blue-600 font-bold' 
+                        : 'text-black hover:font-bold'
                     }`}
                   >
                     {item.name}
@@ -142,8 +142,8 @@ export default function Navigation() {
                     href={item.href}
                     className={`block py-2 text-sm transition-all duration-200 text-center rounded-md ${
                       isActive 
-                        ? 'text-blue-600 font-bold bg-white/50' 
-                        : 'text-black hover:font-bold hover:bg-white/30'
+                        ? 'text-blue-600 font-bold' 
+                        : 'text-black hover:font-bold'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
