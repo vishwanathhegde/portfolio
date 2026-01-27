@@ -2,6 +2,8 @@
 
 import Navigation from '@/components/Navigation';
 import Chatbot from '@/components/Chatbot';
+import Image from 'next/image';
+import { useState } from 'react';
 import { 
   Code, 
   Briefcase, 
@@ -19,6 +21,8 @@ import {
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [imageError, setImageError] = useState(false);
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -68,7 +72,7 @@ export default function Home() {
               {/* Greeting */}
               <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-3 md:mb-4">
                 <span className="text-4xl sm:text-5xl md:text-6xl">👋</span>
-                <span className="text-blue-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-blue-50 px-4 md:px-6 py-2 md:py-3 rounded-full" style={{ fontFamily: 'var(--font-fredoka), sans-serif' }}>Hello, I'm</span>
+                <span className="text-blue-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-blue-50 px-4 md:px-6 py-2 md:py-3 rounded-full" style={{ fontFamily: 'var(--font-fredoka), sans-serif' }}>Hello, I&apos;m</span>
               </div>
 
               {/* Name */}
@@ -148,31 +152,26 @@ export default function Home() {
                     2. Name it 'profile-photo.jpg' (or change the src below)
                     3. Recommended: Square photo, 800x800px or larger
                   */}
-                  <img 
-                    src="/profile-photo.jpg" 
-                    alt="Vishwanath Hegde" 
-                    className="w-full h-full object-cover grayscale"
-                    style={{ filter: 'grayscale(100%)' }}
-                    onError={(e) => {
-                      // Fallback to placeholder if image not found
-                      const target = e.currentTarget as HTMLImageElement;
-                      target.style.display = 'none';
-                      const placeholder = target.nextElementSibling as HTMLElement;
-                      if (placeholder) {
-                        placeholder.classList.remove('hidden');
-                        placeholder.classList.add('flex');
-                      }
-                    }}
-                  />
-                  {/* Placeholder - shown if image not found */}
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-100 items-center justify-center hidden">
-                    <div className="text-center">
-                      <div className="w-64 h-64 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-7xl font-bold shadow-xl">
-                        VH
+                  {!imageError ? (
+                    <Image 
+                      src="/profile-photo.jpg" 
+                      alt="Vishwanath Hegde" 
+                      width={550}
+                      height={550}
+                      className="w-full h-full object-cover grayscale"
+                      style={{ filter: 'grayscale(100%)' }}
+                      onError={() => setImageError(true)}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-100 items-center justify-center flex">
+                      <div className="text-center">
+                        <div className="w-64 h-64 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-7xl font-bold shadow-xl">
+                          VH
+                        </div>
+                        <p className="text-gray-600 text-sm">Your Photo Here</p>
                       </div>
-                      <p className="text-gray-600 text-sm">Your Photo Here</p>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -213,7 +212,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-lg text-black leading-relaxed">
-                Master's student in Applied Computer Science with <span className="text-black font-bold">3+ years</span> of industry experience as a Software Engineer building and maintaining production-scale web and mobile applications.
+                Master&apos;s student in Applied Computer Science with <span className="text-black font-bold">3+ years</span> of industry experience as a Software Engineer building and maintaining production-scale web and mobile applications.
               </p>
               <p className="text-lg text-black leading-relaxed">
                 Strong expertise in <span className="text-black font-bold">Angular, Flutter, and TypeScript</span>, with a proven record of delivering scalable features, improving performance, and collaborating across cross-functional teams.
