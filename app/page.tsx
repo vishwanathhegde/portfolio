@@ -225,13 +225,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp} className="space-y-6">
               <p className="text-lg text-black leading-relaxed">
-                Master&apos;s student in Applied Computer Science with <span className="text-black font-bold">3+ years</span> of industry experience as a Software Engineer building and maintaining production-scale web and mobile applications.
+                M.Sc. student in <span className="text-black font-bold">Applied Computer Science</span> with <span className="text-black font-bold">3+ years of industry experience</span> in <span className="text-black font-bold">Software Development</span>. Experienced in building <span className="text-black font-bold">production-grade web and mobile applications</span> using Angular, Flutter, and TypeScript.
               </p>
               <p className="text-lg text-black leading-relaxed">
-                Strong expertise in <span className="text-black font-bold">Angular, Flutter, and TypeScript</span>, with a proven record of delivering scalable features, improving performance, and collaborating across cross-functional teams.
+                Strong foundation in <span className="text-black font-bold">clean architecture, CI workflows, unit testing, and applied security</span>. Core team contributor to an AI-powered (RAG-based) content platform. Previously worked as a Software Engineer at Robosoft Technologies, contributing to applications across <span className="text-black font-bold">FinTech and Healthcare</span> domains.
               </p>
               <p className="text-lg text-black leading-relaxed">
-                Currently seeking a <span className="text-black font-bold">Working Student (Werkstudent)</span> role to contribute immediately while continuing studies in Germany.
+                Seeking a <span className="text-black font-bold">Werkstudent (Softwareentwicklung)</span> role in Germany. Currently based in Germany, hold a valid student residence permit, and am available for <span className="text-black font-bold">20 hours per week</span> during the semester, with flexibility during semester breaks.
               </p>
             </motion.div>
 
@@ -262,19 +262,35 @@ export default function Home() {
               {[
                 {
                   category: 'Frontend & Mobile',
-                  skills: ['Angular (13+)', 'Flutter', 'Ionic', 'React', 'TypeScript', 'JavaScript', 'RxJS', 'Tailwind CSS']
+                  skills: ['Angular (13+)', 'Flutter', 'Ionic', 'React', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'TypeScript', 'JavaScript', 'RxJS']
                 },
                 {
                   category: 'Backend & APIs',
                   skills: ['Node.js', 'Express.js', 'REST APIs']
                 },
                 {
-                  category: 'Tools & Platforms',
-                  skills: ['Git', 'GitHub', 'GitLab', 'Jenkins', 'Jira', 'MongoDB', 'MySQL']
+                  category: 'Databases',
+                  skills: ['MySQL', 'MongoDB', 'Supabase (Basics)']
                 },
                 {
-                  category: 'AI and Tools',
-                  skills: ['OpenAI GPT-4', 'Langchain', 'RAG', 'Pinecone', 'n8n', 'Cursor', 'Claude', 'Ollama']
+                  category: 'CI/CD & Tooling',
+                  skills: ['Git', 'GitHub', 'GitLab', 'Jenkins (CI pipelines)', 'Jira', 'Confluence', 'Postman']
+                },
+                {
+                  category: 'Testing',
+                  skills: ['Unit Testing', 'Integration Testing']
+                },
+                {
+                  category: 'Security (Applied)',
+                  skills: ['Secure Client-Server Communication', 'Hybrid Cryptography (RSA/AES)']
+                },
+                {
+                  category: 'Engineering Practices',
+                  skills: ['Clean Architecture', 'Performance Optimization', 'Agile/Scrum']
+                },
+                {
+                  category: 'Languages',
+                  skills: ['English (Professional)', 'German (A1 - Learning)']
                 }
               ].map((group, idx) => (
                 <div key={idx} className="glass p-6 rounded-xl border border-blue-200">
@@ -304,34 +320,68 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
           </motion.div>
 
-          <motion.div {...fadeInUp} className="glass p-6 md:p-8 rounded-2xl max-w-4xl mx-auto border border-blue-200">
-            <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
-              <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-lg mx-auto sm:mx-0">
-                <Briefcase className="text-white" size={32} />
+          <div className="space-y-8 max-w-4xl mx-auto">
+            {/* Software Engineer */}
+            <motion.div {...fadeInUp} className="glass p-6 md:p-8 rounded-2xl border border-blue-200">
+              <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-lg mx-auto sm:mx-0">
+                  <Briefcase className="text-white" size={32} />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-black">Software Engineer</h3>
+                    <span className="text-gray-600 text-sm md:text-base mt-1 sm:mt-0">Aug 2022 – Sep 2025</span>
+                  </div>
+                  <p className="text-blue-600 text-base md:text-lg mb-2 font-semibold">Robosoft Technologies, India</p>
+                </div>
               </div>
-              <div className="flex-1 text-center sm:text-left">
-                <h3 className="text-xl md:text-2xl font-bold mb-2 text-black">Software Engineer</h3>
-                <p className="text-blue-600 text-base md:text-lg mb-2 font-semibold">Robosoft Technologies, India</p>
-                <p className="text-gray-700 mb-6 text-sm md:text-base">Full-time position with production-scale responsibilities</p>
-              </div>
-            </div>
 
-            <ul className="space-y-3 md:space-y-4">
-              {[
-                'Owned end-to-end development of production-grade features for large-scale Flutter and Angular applications',
-                'Designed scalable UI architectures using clean architecture principles, improving maintainability and reducing regression issues',
-                'Implemented Google Analytics and event tracking to enable data-driven decisions and increase user engagement by 20%',
-                'Developed and optimized FinTech workflows including SIP, Lumpsum, goal planning, and profile management',
-                'Led Angular upgrades (13+) and performance optimizations, improving long-term stability',
-                'Collaborated with backend, QA, and product teams to integrate REST APIs and resolve production issues'
-              ].map((item, idx) => (
-                <li key={idx} className="flex items-start space-x-2 md:space-x-3">
-                  <ArrowRight className="text-blue-500 mt-1 flex-shrink-0" size={18} />
-                  <span className="text-black text-sm md:text-base">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              <ul className="space-y-3 md:space-y-4">
+                {[
+                  'Contributed to end-to-end development of production-grade features for large-scale Flutter and Angular applications',
+                  'Designed scalable UI architectures following clean architecture principles',
+                  'Implemented unit tests and supported integration testing to improve reliability',
+                  'Built Jenkins-based CI pipelines (non-production) to automate builds and checks',
+                  'Implemented secure client-server communication using a hybrid cryptographic package',
+                  'Integrated Google Analytics, increasing user engagement by 20%',
+                  'Collaborated with backend, QA, and product teams to resolve issues'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start space-x-2 md:space-x-3">
+                    <ArrowRight className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-black text-sm md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Machine Learning Intern */}
+            <motion.div {...fadeInUp} className="glass p-6 md:p-8 rounded-2xl border border-blue-200">
+              <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-lg mx-auto sm:mx-0">
+                  <Briefcase className="text-white" size={32} />
+                </div>
+                <div className="flex-1 text-center sm:text-left">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-black">Machine Learning Intern</h3>
+                    <span className="text-gray-600 text-sm md:text-base mt-1 sm:mt-0">Aug 2021 – Oct 2021</span>
+                  </div>
+                  <p className="text-blue-600 text-base md:text-lg mb-2 font-semibold">Rove Labs Pvt. Ltd., Bengaluru, India</p>
+                </div>
+              </div>
+
+              <ul className="space-y-3 md:space-y-4">
+                {[
+                  'Performed exploratory data analysis (EDA) and implemented ML algorithms using Python',
+                  'Documented findings in a structured internship report'
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start space-x-2 md:space-x-3">
+                    <ArrowRight className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <span className="text-black text-sm md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -346,29 +396,29 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
+                title: 'Flaira – AI Content Management Platform (Web)',
+                tech: 'Next.js/AI/RAG',
+                description: 'Core team member on an AI-powered platform generating voice-consistent content using RAG-based learning, contributing across frontend, backend APIs, and AI integrations.',
+              },
+              {
                 title: 'PGIM India Mutual Funds',
                 tech: 'Angular',
-                description: 'Developed investor and distributor workflows with self-certification modules and role-based access control.',
+                description: 'Developed investor and distributor workflows with role-based access.',
               },
               {
                 title: 'UTI Mutual Fund',
                 tech: 'Angular',
-                description: 'Implemented transaction and non-transaction flows, smart search functionality, dashboards, and comprehensive API integrations.',
+                description: 'Implemented transaction and non-transaction flows, dashboards, and API integrations.',
               },
               {
                 title: 'Afiya – Healthcare App',
                 tech: 'Flutter',
-                description: 'Built appointment booking and management system, integrated analytics, and handled Android/iOS store releases.',
+                description: 'Built appointment booking and management flows and implemented secure communication.',
               },
               {
-                title: 'Lixil Tomcat – Health Tracking',
+                title: 'Lixil Tomcat – Health Tracking App',
                 tech: 'Flutter',
-                description: 'Implemented Bluetooth device communication and real-time health data visualization for health tracking applications.',
-              },
-              {
-                title: 'Flaira - AI Content Management Platform',
-                tech: 'AI/RAG',
-                description: 'AI Content Management Platform using RAG-based learning to generate authentic, voice-consistent posts, preserves a user\'s personal or brand voice.',
+                description: 'Implemented Bluetooth device communication and real-time health data visualization.',
               }
             ].map((project, idx) => (
               <motion.div
@@ -454,24 +504,24 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
             {[
               {
-                title: 'Technical Workshops',
-                description: 'Conducted technical workshops on Flutter and programming fundamentals',
+                title: 'Training & Onboarding',
+                description: 'Trained and onboarded new joiners (freshers) on the Flutter framework, application architecture, and development best practices',
                 icon: Award,
               },
               {
+                title: 'Technical Workshops',
+                description: 'Conducted technical workshops on Flutter and programming fundamentals',
+                icon: Sparkles,
+              },
+              {
                 title: 'Mentorship',
-                description: 'Mentored undergraduate students in technical and interview preparation for campus placements',
+                description: 'Mentored undergraduate students in technical and interview preparation',
                 icon: Sparkles,
               },
               {
                 title: 'Performance Impact',
                 description: 'Increased user engagement by 20% through data-driven decisions and analytics implementation',
                 icon: Award,
-              },
-              {
-                title: 'Production Experience',
-                description: 'Delivered multiple production-grade applications for major financial institutions',
-                icon: Briefcase,
               }
             ].map((achievement, idx) => (
               <motion.div
@@ -498,7 +548,7 @@ export default function Home() {
             <h2 className="text-5xl font-bold mb-4 gradient-text">Get In Touch</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-8"></div>
             <p className="text-xl text-black max-w-2xl mx-auto">
-              Available immediately for Working Student positions (20 hrs/week). Open to relocation within Germany.
+              Available for Werkstudent positions: 20 hours per week during the semester, with flexibility during semester breaks. Currently based in Germany with a valid student residence permit.
             </p>
           </motion.div>
 
